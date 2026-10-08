@@ -51,13 +51,25 @@ h2 { margin: 0; font-size: 30px; color: var(--navy); }
 .profile-note { display: grid; grid-template-columns: 1.3fr .7fr; gap: 40px; background: var(--pale); padding-left: 34px; padding-right: 34px; border-radius: 14px; }
 .profile-links { display: flex; flex-direction: column; justify-content: center; gap: 10px; }
 .profile-links a { background: white; border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
-.profile-photo {
+/* === PHOTO FIX === */
+.photo-placeholder {
   width: 110px;
   height: 135px;
   margin-bottom: 18px;
-  border: 2px solid #b9d8f7;
+  border: 2px solid #b9d8f7; /* Changed to solid line */
   border-radius: 5px;
-  object-fit: cover; /* This ensures the photo doesn't stretch */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevents the image from spilling outside the box */
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is the magic property that prevents stretching */
+  object-position: center top; /* Keeps your face/head centered if it needs to crop */
 }
 footer { background: #102d4c; color: white; padding: 40px 0; }
 .footer-grid { display: flex; justify-content: space-between; gap: 30px; }
