@@ -1,2 +1,0 @@
-# jerry-cv
-Living CV
